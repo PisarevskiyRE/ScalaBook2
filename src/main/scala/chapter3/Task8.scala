@@ -2,7 +2,7 @@ package chapter3
 
 import scala.collection.mutable.ArrayBuffer
 
-object Task8 extends App {
+object Task0308 extends App {
 
   val a = ArrayBuffer(1,2,-3,4,5,-6,7,8,-9, 0)
 

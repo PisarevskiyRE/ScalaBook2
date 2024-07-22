@@ -3,7 +3,7 @@ package chapter3
 import scala.collection.mutable.ArrayBuffer
 import scala.util.Sorting._
 
-object Task6 extends App {
+object Task0306 extends App {
 
 
   val array1 = Array(1,22,3,4,5,6)

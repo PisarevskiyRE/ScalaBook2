@@ -3,7 +3,7 @@ package chapter3
 
 import scala.collection.mutable.ArrayBuffer
 
-object Task9 extends App {
+object Task0309 extends App {
 
   /*Улучшите решение из предыдущего упражнения. Соберите ин-
 дексы элементов, подлежащих перемещению и позиции, ку-

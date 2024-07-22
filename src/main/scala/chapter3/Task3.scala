@@ -1,6 +1,6 @@
 package chapter3
 
-object Task3 extends App {
+object Task0303 extends App {
 
   val array = Array(1,2,3,4,5)
 

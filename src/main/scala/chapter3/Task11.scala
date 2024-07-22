@@ -4,7 +4,7 @@ import java.awt.datatransfer.{DataFlavor, SystemFlavorMap}
 
 
 
-object Task11 extends App {
+object Task0311 extends App {
 
   val smap = SystemFlavorMap.getDefaultFlavorMap().asInstanceOf[SystemFlavorMap]
   val flavors = smap.getNativesForFlavor(DataFlavor.imageFlavor)
