@@ -29,8 +29,8 @@ object Exec1 extends App {
     helper(data, 0)
   }
 
-  println(
-  sum(Cons(1,Cons(2,Cons(3,Nil)))))
+//  println(
+//  sum(Cons(1,Cons(2,Cons(3,Nil)))))
 
 
 
@@ -46,12 +46,21 @@ object Exec1 extends App {
     helper(data, Nil)
 
   }
+//  println(
+//    reversed(Cons(1,Cons(2,Cons(3,Nil)))))
+
+
+  def foldRight[T](data: IntList, f: (Int, T) => T)(start: T): T = data match {
+    case Nil => start
+    case Cons(head, Nil) =>  f(head, start)
+    case Cons(head, Cons(a, Nil)) => f(head + a, start)
+    case Cons(head, Cons(a, b)) => f(head, foldRight(Cons(a, b),f)(start) )
+  }
+
+
   println(
-    reversed(Cons(1,Cons(2,Cons(3,Nil)))))
-
-
-
-
+    foldRight(Cons(1,Cons(2,Cons(3,Nil))), (a: Int, b:Int) => b - a)(100)
+  )
 
 }
 
