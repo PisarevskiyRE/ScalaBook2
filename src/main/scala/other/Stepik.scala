@@ -1,11 +1,11 @@
 package other
 
-import other.Exec1.IntList
+import other.Stepik.IntList
 
 import scala.annotation.tailrec
 
 
-object Exec1 extends App {
+object Stepik extends App {
 
   trait IntList
   case object Nil extends IntList
