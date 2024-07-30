@@ -2,6 +2,8 @@ package other
 
 import other.Exec1.IntList
 
+import scala.annotation.tailrec
+
 
 object Exec1 extends App {
 
@@ -36,7 +38,7 @@ object Exec1 extends App {
 
 
   def reversed(data: IntList): IntList = {
-
+    @tailrec
     def helper(data: IntList, acc: IntList): IntList = data match {
       case Cons(head, tail) => helper(tail, Cons(head, acc))
       case Cons(head, Nil) => Cons(head, acc)
@@ -58,10 +60,31 @@ object Exec1 extends App {
   }
 
 
-  println(
-    foldRight(Cons(1,Cons(2,Cons(3,Nil))), (a: Int, b:Int) => b - a)(100)
-  )
+//  println(
+//    foldRight(Cons(1,Cons(2,Cons(3,Nil))), (a: Int, b:Int) => b - a)(100)
+//  )
 
+
+
+  def foldLeft[T](data: IntList, f: (Int, T) => T)(start: T): T = {
+
+    @tailrec
+    def helper(data: IntList, acc: T, f: (Int, T) => T): T =
+      data match {
+        case Nil => acc
+        case Cons(head, Nil) => helper(Nil,  f(head, acc), f)
+        case Cons(head, Cons(a, Nil)) => helper(Cons(a, Nil), f(head, acc), f)
+        case Cons(head, Cons(a, b)) => helper(Cons(a, b),    f(head, acc) ,    f)
+      }
+
+
+
+    helper(data, start, f)
+  }
+
+    println(
+      foldLeft(Cons(1,Cons(2,Cons(3,Cons(4,Nil)))), (a: Int, b:Int) => b - a )(100)
+    )
 }
 
 /*
